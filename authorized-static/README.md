@@ -17,18 +17,19 @@ The dependencies are listed in [functions/package.json](functions/package.json).
 1. If Firebase CLI is not install, install it with `npm install -g firebase-tools` and then configure it with `firebase login`.
 1. Configure the CLI locally by using `firebase use --add` and select your project in the list.
 1. Install dependencies locally by running: `cd functions; npm install; cd -`
-
-## Deploy
-
-1. Set the `static.token` Google Cloud environment variables to an authorization token you define (e.g. UUID string, ...). For this use:
+1. Set the `static.token` Google Cloud environment variables to an authorization token you define (e.g. UUID string, etc.).
 ```bash
 firebase functions:config:set static.token="A_TOKEN_YOU_DEFINE"
 ```
-1. Deploy your project using `firebase deploy --only functions`
+
+## Deploy
+
+Deploy your project using `firebase deploy --only functions`
+
 
 ## Test
 
-Request  static content.  *Use a URL request tool such as [curl](https://curl.haxx.se/) or [Postman](https://www.getpostman.com/) to test static resource requests.*
+Request  static content.
 
 **IMPORTANT:**  Remember to set the `Authorization` header to `Bearer <THE_TOKEN_YOU_DEFINED>` when making the request!
 
@@ -39,6 +40,8 @@ https://<YOUR_FIREBASE_CLOUD_FUNCTIONS_REQUEST_URL>/authorizedStatic/static/exam
 https://<YOUR_FIREBASE_CLOUD_FUNCTIONS_REQUEST_URL>/authorizedStatic/static/example-markdown.md
 https://<YOUR_FIREBASE_CLOUD_FUNCTIONS_REQUEST_URL>/authorizedStatic/static/example-json.json
 ```
+
+*Use a URL request tool such as [curl](https://curl.haxx.se/) or [Postman](https://www.getpostman.com/) to test static resource requests.*
 
 
  ## License
