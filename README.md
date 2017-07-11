@@ -5,7 +5,7 @@ This repository contains a *growing* collection of example **HTTP trigger [Cloud
 **Need to test HTTP Trigger Functions?**  Try [Postman](https://www.getpostman.com/).
 
 
-## Cloud Functions for Firebase Examples
+## Examples
 
 ### [HTTP trigger: authorizedStatic](/authorized-static)
 
