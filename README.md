@@ -1,8 +1,6 @@
 # Overview
 
-This repository contains a *growing* collection of example [HTTP trigger](https://firebase.google.com/docs/functions/http-events) [Cloud Functions for Firebase](https://firebase.google.com/features/functions).
-
-*For more on Cloud Functions for Firebase see the [docs](https://firebase.google.com/docs/functions/).*
+This repository contains a *growing* collection of example **HTTP trigger [Cloud Functions for Firebase](https://firebase.google.com/features/functions)**.
 
 **Need to test HTTP Trigger Functions?**  Try [Postman](https://www.getpostman.com/).
 
