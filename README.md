@@ -9,7 +9,7 @@ This repository contains a *growing* collection of example **HTTP trigger [Cloud
 
 ### [HTTP trigger: authorizedStatic](/authorized-static)
 
-This example demonstrates an **HTTP Trigger Cloud Function** providing simple authenticated access to static plain-text content.  
+This example demonstrates an **HTTP Trigger [Cloud Function for Firebase](https://firebase.google.com/docs/functions/)** providing *simple* authenticated access to static plain-text content by passing a pre-defined access token.  
 
 Example uses the [Express](https://expressjs.com/) framework.
 
