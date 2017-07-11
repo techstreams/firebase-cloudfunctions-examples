@@ -24,16 +24,12 @@ firebase functions:config:set static.token="A_TOKEN_YOU_DEFINE"
 
 ## Deploy
 
-Deploy your project using `firebase deploy --only functions`
-
-
-## Test
-
-Request  static content.
+1. Deploy your project using `firebase deploy --only functions`.
+1. Request  static content.
 
 **IMPORTANT:**  Remember to set the `Authorization` header to `Bearer <THE_TOKEN_YOU_DEFINED>` when making the request!
 
-Example Static Content Requests:
+Example Requests:
 
 ```
 https://<YOUR_FIREBASE_CLOUD_FUNCTIONS_REQUEST_URL>/authorizedStatic/static/example-yaml.yml
@@ -41,7 +37,7 @@ https://<YOUR_FIREBASE_CLOUD_FUNCTIONS_REQUEST_URL>/authorizedStatic/static/exam
 https://<YOUR_FIREBASE_CLOUD_FUNCTIONS_REQUEST_URL>/authorizedStatic/static/example-json.json
 ```
 
-*Use a URL request tool such as [curl](https://curl.haxx.se/) or [Postman](https://www.getpostman.com/) to test static resource requests.*
+*Use a URL request tool such as [curl](https://curl.haxx.se/) or [Postman](https://www.getpostman.com/) to test requests.*
 
 
  ## License
