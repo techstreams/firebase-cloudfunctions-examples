@@ -1,6 +1,6 @@
 # Authorized Static
 
-This example demonstrates an **HTTP Trigger [Cloud Function for Firebase](https://firebase.google.com/docs/functions/)** providing *simple* authenticated access to static plain-text content by passing a pre-defined access token.  
+This example demonstrates an **HTTP Trigger Function** providing *simple* authenticated access to static plain-text content by passing a pre-defined access token through environment configuration - `functions.config()`. 
 
 Example uses the [Express](https://expressjs.com/) framework.
 
