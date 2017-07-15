@@ -44,7 +44,7 @@ const validateToken = (req, res, next) => {
   }
   console.log('Authorized request')
   next()
-};
+}
 
 // Use token validation middleware
 app.use(validateToken)

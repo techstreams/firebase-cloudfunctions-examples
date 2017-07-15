@@ -43,6 +43,7 @@ const allowMethods = (req, res, next) => {
   if (methods.indexOf(req.method.toUpperCase()) === -1) {
     res.header('Allow', methods.join(', '))
     res.status(405).send('Request Method Not Allowed')
+    return
   }
   next()
 }
@@ -52,6 +53,7 @@ const validateToken = (req, res, next) => {
   if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ') || !req.headers.authorization.split('Bearer ')[1]) {
     console.error('Unauthorized Request.  No Token was Passed in the Authorization Header.')
     res.status(403).send('Unauthorized')
+    return
   }
   const reqToken = req.headers.authorization.split('Bearer ')[1]
   admin.database().ref(fbTokenPath).once('value').then(snapshot => {
@@ -59,15 +61,17 @@ const validateToken = (req, res, next) => {
     if (!fbToken) {
       console.log('No Function Token Found in Firebase')
       res.status(403).send('Unauthorized')
+      return
     }
     if (reqToken != fbToken) {
       console.log(`Unauthorized Token: ${reqToken}`)
       res.status(403).send('Unauthorized')
+      return
     }
     next()
   }).catch(error => {
     console.log(`Authorization Error: ${error}`)
-    res.status(403).send('Unauthorized');
+    res.status(403).send('Unauthorized')
   })
 }
 
