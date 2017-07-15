@@ -1,6 +1,6 @@
 # Authorized Static
 
-This example demonstrates an [HTTP Trigger Function](https://firebase.google.com/docs/functions/http-events) serving *authorized* content from a `static` path.  Client applications pass a matching authentication token pre-defined in the [function configuration](https://firebase.google.com/docs/functions/config-env) - `functions.config()`.  
+This example demonstrates an [HTTP Trigger Function](https://firebase.google.com/docs/functions/http-events) serving *authorized* content from a `static` path.  Client applications pass a matching authorization token pre-defined in the [function configuration](https://firebase.google.com/docs/functions/config-env) - `functions.config()`.  
 
 Example uses the [Express](https://expressjs.com/) framework.
 
