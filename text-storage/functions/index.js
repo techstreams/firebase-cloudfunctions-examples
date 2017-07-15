@@ -110,7 +110,7 @@ app.post('/:path/:filename', (req, res) => {
       res.status(500).send('Server Error')
     })
   } else {
-    console.log('No File Content or Wrong Content-Type')
+    console.log('No File Content or Invalide Content-Type')
     res.status(400).send('Bad Request')
   }
 })

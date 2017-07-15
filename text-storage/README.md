@@ -1,6 +1,6 @@
 # Text Storage
 
-This example demonstrates an [HTTP Trigger Function](https://firebase.google.com/docs/functions/http-events) providing a simple *authenticated* [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer) to save and retrieve text files from [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).  Client applications pass a matching authentication token pre-defined in the [Firebase Realtime Database](https://firebase.google.com/products/database/).
+This example demonstrates an [HTTP Trigger Function](https://firebase.google.com/docs/functions/http-events) providing a simple *authorized* [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer) to save and retrieve text files from [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).  Client applications pass a matching authentication token pre-defined in the [Firebase Realtime Database](https://firebase.google.com/products/database/).
 
 Example uses the [Express](https://expressjs.com/) framework and [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
 
