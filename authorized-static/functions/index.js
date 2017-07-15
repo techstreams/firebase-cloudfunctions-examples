@@ -29,6 +29,17 @@ const functions = require('firebase-functions')
 const express = require('express')
 const app = express()
 
+// Request Method Validation Middleware
+const allowMethods = (req, res, next) => {
+  const methods = ['GET']
+  if (methods.indexOf(req.method.toUpperCase()) === -1) {
+    res.header('Allow', methods.join(', '))
+    res.status(405).send('Request Method Not Allowed')
+    return
+  }
+  next()
+}
+
 // Token validation middleware
 const validateToken = (req, res, next) => {
   if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ') || !req.headers.authorization.split('Bearer ')[1]) {
@@ -46,7 +57,8 @@ const validateToken = (req, res, next) => {
   next()
 }
 
-// Use token validation middleware
+// Use Middleware
+app.use(allowMethods)
 app.use(validateToken)
 
 // Serve static content
