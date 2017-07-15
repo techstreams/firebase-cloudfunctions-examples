@@ -1,17 +1,23 @@
 # Overview
 
-This repository contains a *growing* example collection of **HTTP trigger [Cloud Functions for Firebase](https://firebase.google.com/features/functions)** primarily intended to demonstrate backend capabilities to support [Google Apps Script](https://www.google.com/script/start/).
+This repository contains a *growing* collection of example [Cloud Functions for Firebase](https://firebase.google.com/features/functions) to demonstrate backend capability for supporting [Google Apps Script](https://www.google.com/script/start/).
 
-**Need to test HTTP Trigger Functions?**  Try [Postman](https://www.getpostman.com/).
-
+*Testing [HTTP Trigger Functions](https://firebase.google.com/docs/functions/http-events)?  Try [Postman](https://www.getpostman.com/).*
 
 ## Examples
 
 ### [HTTP trigger: authorizedStatic](/authorized-static)
 
-This example demonstrates an **HTTP Trigger Function** providing *simple* authenticated access to static plain-text content by passing a pre-defined access token through environment configuration - `functions.config()`.  
+This example demonstrates an [HTTP Trigger Function](https://firebase.google.com/docs/functions/http-events) serving *authenticated* content from a `static` path.  Client applications pass a matching authentication token pre-defined in the [function configuration](https://firebase.google.com/docs/functions/config-env) - `functions.config()`.  
 
 Example uses the [Express](https://expressjs.com/) framework.
+
+
+### [HTTP trigger: textStorage](/text-storage)
+
+This example demonstrates an [HTTP Trigger Function](https://firebase.google.com/docs/functions/http-events) providing a simple *authenticated* [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer) to save and retrieve text files from [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).  Client applications pass a matching authentication token pre-defined in the [Firebase Realtime Database](https://firebase.google.com/products/database/).
+
+Example uses the [Express](https://expressjs.com/) framework and [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
 
 
 ## License
