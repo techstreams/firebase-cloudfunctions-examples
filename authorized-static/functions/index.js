@@ -22,13 +22,16 @@
 
 'use strict';
 
+// Configuration - Cloud Functions
 const functions = require('firebase-functions')
+
+// Configuration - Express
 const express = require('express')
 const app = express()
 
 // Token validation middleware
 const validateToken = (req, res, next) => {
-  if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
+  if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ') || !req.headers.authorization.split('Bearer ')[1]) {
     console.error('Unauthorized request.  No token was passed as a Bearer token in the Authorization header.')
     res.status(403).send('Unauthorized')
     return
@@ -54,4 +57,5 @@ app.get('*', (req, res) => {
   res.status(404).send('Not Found')
 })
 
+// Export Function
 exports.authorizedStatic = functions.https.onRequest(app)
