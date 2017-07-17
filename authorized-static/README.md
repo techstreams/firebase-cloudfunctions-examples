@@ -44,11 +44,11 @@ function getStatic() {
    var response, responseCode;
 
    // DEVELOPER TODO:  Replace "functionUrl" with the deployed Cloud Function URL from the Firebase Console
-   // Consider storing URL in a Google Apps Script Properties Store ... PropertiesService.getScriptProperties().getProperty('functionUrl')
+   // Consider storing URL in a Google Apps Script Properties Store
    var functionUrl = "https://<FIREBASE_CLOUD_FUNCTION_URL>/authorizedStatic";
 
-   // DEVELOPER TODO:  Replace <TOKEN> with pre-defined token passed to Cloud Function configuration
-   // Consider storing token in a Google Apps Script Properties Store ... PropertiesService.getScriptProperties().getProperty('functionToken')
+   // DEVELOPER TODO:  Replace <TOKEN> with pre-defined token defined in the Cloud Function configuration
+   // Consider storing token in a Google Apps Script Properties Store
    var functionToken = "<TOKEN>";
 
    var filePath = "static";

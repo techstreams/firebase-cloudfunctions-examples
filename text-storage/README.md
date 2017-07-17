@@ -56,12 +56,12 @@ The dependencies are listed in [functions/package.json](functions/package.json).
 
 ## Deploy
 
-1. Deploy project using `firebase deploy --only functions`
+Deploy project using `firebase deploy --only functions`
 
 
 ## Request from Google Apps Script
 
-Example Google Apps Script to call the deployed Cloud Function to save a text file to [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
+Example Google Apps Script to call the deployed Cloud Function to **save a text file** to [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
 
 
 ```js
@@ -116,8 +116,10 @@ function saveTextToStorage() {
 
 ```
 
+<br>
 
-Example Google Apps Script to call the deployed Cloud Function to retrieve an existing text file from [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
+
+Example Google Apps Script to call the deployed Cloud Function to **retrieve an existing text file** from [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
 
 ```js
 
@@ -128,11 +130,11 @@ function getTextFromStorage() {
    var response, responseCode;
 
    // DEVELOPER TODO:  Replace with deployed Cloud Function URL
-   // Consider storing URL in a Google Apps Script Properties Store ... PropertiesService.getScriptProperties().getProperty('functionUrl')
+   // Consider storing URL in a Google Apps Script Properties Store
    var functionUrl = "https://<FIREBASE_CLOUD_FUNCTION_URL>/textStorage/";
 
    // DEVELOPER TODO:  Replace <TOKEN> with pre-defined token stored in Firebase Realtime Database
-   // Consider storing token in Google Apps Script Properties Store  ... PropertiesService.getScriptProperties().getProperty('functionToken')
+   // Consider storing token in Google Apps Script Properties Store
    var functionToken = "<TOKEN>";
 
    // DEVELOPER TODO: Replace <FOLDER> and <FILENAME> with path and name of file stored in Cloud Storage Bucket e.g. "myfiles/mydoc.txt"
