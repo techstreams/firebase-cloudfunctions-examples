@@ -57,7 +57,112 @@ The dependencies are listed in [functions/package.json](functions/package.json).
 ## Deploy
 
 1. Deploy project using `firebase deploy --only functions`
-1. Make Save/(POST) and Retrieve/(GET) API calls to deployed function, e.g. `https://<YOUR_FIREBASE_CLOUD_FUNCTIONS_REQUEST_URL>/textStorage/myfolder/myfile.txt`
+
+
+## Request from Google Apps Script
+
+Example Google Apps Script to call the deployed Cloud Function to save a text file to [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
+
+
+```js
+
+...
+
+function saveTextToStorage() {
+
+   var response, responseCode;
+
+   // DEVELOPER TODO:  Replace "functionUrl" with the deployed Cloud Function URL from the Firebase Console
+   // Consider storing URL in a Google Apps Script Properties Store ... PropertiesService.getScriptProperties().getProperty('functionUrl')
+   var functionUrl = "https://<FIREBASE_CLOUD_FUNCTION_URL>/textStorage";
+
+   // DEVELOPER TODO:  Replace <TOKEN> with user defined token stored in Firebase Realtime Database
+   // Consider storing token in a Google Apps Script Properties Store ... PropertiesService.getScriptProperties().getProperty('functionToken')
+   var functionToken = "<TOKEN>";
+
+   // DEVELOPER TODO: Replace <FOLDER> with name of the parent folder of the file to be stored in Cloud Storage Bucket e.g. "myfolder"
+   var filePath = "<FOLDER>";
+
+   // DEVELOPER TODO: Replace <FILENAME> with the name of the file to be stored in Cloud Storage Bucket e.g. "mydoc.txt"
+   var fileName = "<FILENAME>";
+
+   // DEVELOPER TODO: Replace "content" with text content of file to be stored in Cloud Storage Bucket
+   var fileContent = "... file content ...";
+
+   var params = {
+     'method': 'POST',
+     'contentType': 'text/plain',
+     'headers': {
+         'Authorization': 'Bearer ' + functionToken
+      },
+     'payload' : fileContent
+   };
+
+   response = UrlFetchApp.fetch(functionUrl + "/" + filePath + "/" + fileName, params);
+   responseCode = response.getResponseCode();
+
+   if (responseCode == 200) {
+      // Success fetching file
+      return true;
+   } else {
+      // Error returned from Cloud Function
+      Logger.log('Error saving file.  Response code: ' + responseCode);
+      return false;
+   }
+
+}
+
+...
+
+```
+
+
+Example Google Apps Script to call the deployed Cloud Function to retrieve an existing text file from [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
+
+```js
+
+...
+
+function getTextFromStorage() {
+
+   var response, responseCode;
+
+   // DEVELOPER TODO:  Replace with deployed Cloud Function URL
+   // Consider storing URL in a Google Apps Script Properties Store ... PropertiesService.getScriptProperties().getProperty('functionUrl')
+   var functionUrl = "https://<FIREBASE_CLOUD_FUNCTION_URL>/textStorage/";
+
+   // DEVELOPER TODO:  Replace <TOKEN> with pre-defined token stored in Firebase Realtime Database
+   // Consider storing token in Google Apps Script Properties Store  ... PropertiesService.getScriptProperties().getProperty('functionToken')
+   var functionToken = "<TOKEN>";
+
+   // DEVELOPER TODO: Replace <FOLDER> and <FILENAME> with path and name of file stored in Cloud Storage Bucket e.g. "myfiles/mydoc.txt"
+   var filePath = "<FOLDER>/<FILENAME>";
+
+   var params = {
+     'method': 'GET',
+     'headers': {
+         'Authorization': 'Bearer ' + functionToken
+      }
+   };
+
+   response = UrlFetchApp.fetch(functionUrl + filePath, params);
+   responseCode = response.getResponseCode();
+
+   if (responseCode == 200) {
+      // Success fetching file from Cloud Function
+      return response.getContentText();
+   } else {
+      // Error returned from Cloud Function
+      Logger.log('Error fetching file.  Response code: ' + responseCode);
+      return null;
+   }
+
+}
+
+...
+
+```
+
 
 
  ## License

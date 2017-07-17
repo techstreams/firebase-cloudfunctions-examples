@@ -22,19 +22,63 @@ The dependencies are listed in [functions/package.json](functions/package.json).
 firebase functions:config:set static.token="A_TOKEN_YOU_DEFINE"
 ```
 
+**IMPORTANT:**  Remember to set the `Authorization` header to `Bearer <THE_TOKEN_YOU_DEFINED>` when making the request!
+
+
 ## Deploy
 
 1. Deploy your project using `firebase deploy --only functions`.
-1. Request static content.
 
-**IMPORTANT:**  Remember to set the `Authorization` header to `Bearer <THE_TOKEN_YOU_DEFINED>` when making the request!
 
-Example Requests:
+## Request from Google Apps Script
 
-```
-https://<YOUR_FIREBASE_CLOUD_FUNCTIONS_REQUEST_URL>/authorizedStatic/static/example-yaml.yml
-https://<YOUR_FIREBASE_CLOUD_FUNCTIONS_REQUEST_URL>/authorizedStatic/static/example-markdown.md
-https://<YOUR_FIREBASE_CLOUD_FUNCTIONS_REQUEST_URL>/authorizedStatic/static/example-json.json
+
+Example Google Apps Script to request a static file from the deployed Cloud Function.
+
+```js
+
+...
+
+function getStatic() {
+
+   var response, responseCode;
+
+   // DEVELOPER TODO:  Replace "functionUrl" with the deployed Cloud Function URL from the Firebase Console
+   // Consider storing URL in a Google Apps Script Properties Store ... PropertiesService.getScriptProperties().getProperty('functionUrl')
+   var functionUrl = "https://<FIREBASE_CLOUD_FUNCTION_URL>/authorizedStatic";
+
+   // DEVELOPER TODO:  Replace <TOKEN> with pre-defined token passed to Cloud Function configuration
+   // Consider storing token in a Google Apps Script Properties Store ... PropertiesService.getScriptProperties().getProperty('functionToken')
+   var functionToken = "<TOKEN>";
+
+   var filePath = "static";
+
+   // DEVELOPER TODO: Replace <FILENAME> with name of file to retrieve from Cloud Function e.g. "myconfig.yml"
+   var fileName = "<FILENAME>";
+
+   var params = {
+     'method': 'GET',
+     'headers': {
+         'Authorization': 'Bearer ' + functionToken
+      }
+   };
+
+   response = UrlFetchApp.fetch(functionUrl + "/" + filePath + "/" + fileName, params);
+   responseCode = response.getResponseCode();
+
+   if (responseCode == 200) {
+      // Success fetching file from Cloud Function
+      return response.getContentText();
+   } else {
+      // Error returned from Cloud Function
+      Logger.log('Error fetching file.  Response code: ' + responseCode);
+      return null;
+   }
+
+}
+
+...
+
 ```
 
 
