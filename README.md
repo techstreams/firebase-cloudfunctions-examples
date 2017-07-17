@@ -20,6 +20,12 @@ This example demonstrates an [HTTP Trigger Function](https://firebase.google.com
 Example uses the [Express](https://expressjs.com/) framework and [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
 
 
+### [HTTP trigger: markdown](/markdown)
+
+This example demonstrates an [HTTP Trigger Function](https://firebase.google.com/docs/functions/http-events) providing [markdown](https://en.wikipedia.org/wiki/Markdown) parsing with [marked](https://github.com/chjj/marked).  Default *[render](https://github.com/chjj/marked#usage)* and *[lex](https://github.com/chjj/marked#pro-level)* actions are supported, along with [highlight.js](https://highlightjs.org/) code highlighting.
+
+Example uses the [Express](https://expressjs.com/) framework.
+
 ## License
 
 © [Laura Taylor](https://github.com/techstreams). Licensed under an [MIT](LICENSE) license.
