@@ -26,7 +26,7 @@ Requests to Cloud Function should specify header `contentType` of `application/j
 
 * **content** - markdown content
 * **action** - action to be performed by Cloud Function (possible values: "RENDER" or "LEX")
-* (optional) **options** - [marked](https://github.com/chjj/marked) parser options - *see [marked options](https://github.com/chjj/marked#options-1) for more information**
+* (optional) **options** - [marked](https://github.com/chjj/marked) parser options - *see [marked options](https://github.com/chjj/marked#options-1) for more information*
   * All [marked options](https://github.com/chjj/marked#options-1) are supported **EXCEPT** `renderer`  
   * To highlight code, send `highlight: true` option instead of a highlight function
   * Cloud Function uses [highlight.js](https://highlightjs.org/) for all code highlighting
