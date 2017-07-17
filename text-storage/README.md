@@ -73,11 +73,11 @@ function saveTextToStorage() {
    var response, responseCode;
 
    // DEVELOPER TODO:  Replace "functionUrl" with the deployed Cloud Function URL from the Firebase Console
-   // Consider storing URL in a Google Apps Script Properties Store ... PropertiesService.getScriptProperties().getProperty('functionUrl')
+   // Consider storing URL in a Google Apps Script Properties Store
    var functionUrl = "https://<FIREBASE_CLOUD_FUNCTION_URL>/textStorage";
 
    // DEVELOPER TODO:  Replace <TOKEN> with user defined token stored in Firebase Realtime Database
-   // Consider storing token in a Google Apps Script Properties Store ... PropertiesService.getScriptProperties().getProperty('functionToken')
+   // Consider storing token in a Google Apps Script Properties Store
    var functionToken = "<TOKEN>";
 
    // DEVELOPER TODO: Replace <FOLDER> with name of the parent folder of the file to be stored in Cloud Storage Bucket e.g. "myfolder"
