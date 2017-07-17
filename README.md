@@ -1,6 +1,6 @@
 # Overview
 
-This repository contains a *growing* collection of example [Cloud Functions for Firebase](https://firebase.google.com/features/functions) to demonstrate backend support for [Google Apps Script](https://www.google.com/script/start/).
+This repository contains a *growing* collection of [Firebase Cloud Function](https://firebase.google.com/features/functions) examples to demonstrate backend support for [Google Apps Script](https://www.google.com/script/start/).
 
 *Testing [HTTP Trigger Functions](https://firebase.google.com/docs/functions/http-events)?  Try [Postman](https://www.getpostman.com/).*
 
