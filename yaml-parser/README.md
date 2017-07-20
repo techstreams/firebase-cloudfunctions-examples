@@ -27,10 +27,8 @@ Requests to Cloud Function should specify header `contentType` of `application/j
 * **content** - YAML content (for LOAD) /  JSON content (for DUMP)
 * **action** - action to be performed by Cloud Function (possible values: "LOAD" or "DUMP")
 * (optional) **options**
-  * **[safeLoad](https://github.com/nodeca/js-yaml#safeload-string---options-)** parser options
-    * Only `json` option supported
-  * **[safeDump](https://github.com/nodeca/js-yaml#safedump-object---options-)** parser options
-    * All options supported **EXCEPT** `skipInvalid`, `styles`, `schema` and `condenseFlow`
+  * **[safeLoad](https://github.com/nodeca/js-yaml#safeload-string---options-)** only `json` option supported
+  * **[safeDump](https://github.com/nodeca/js-yaml#safedump-object---options-)** all options supported **EXCEPT** `skipInvalid`, `styles`, `schema` and `condenseFlow`
 
 
 Example LOAD Request (from YAML):
