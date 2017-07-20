@@ -66,7 +66,6 @@ const requiredFields = (req, res, next) => {
 const getParserOptions = (action, options) => {
   if (action === 'LOAD') {
     // "LOAD" option supported in this Cloud Function - see options https://github.com/nodeca/js-yaml#safeload-string---options-
-    console.log('Value = ' + options.json)
     return {
       json: options.json ? options.json : false
     }
