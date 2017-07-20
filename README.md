@@ -26,6 +26,13 @@ This example demonstrates an [HTTP Trigger Function](https://firebase.google.com
 
 Example uses the [Express](https://expressjs.com/) framework.
 
+
+### [HTTP trigger: yamlParser](/yaml-parser)
+
+This example demonstrates an [HTTP Trigger Function](https://firebase.google.com/docs/functions/http-events) providing [YAML](https://en.wikipedia.org/wiki/YAML) parsing with [js-yaml](https://github.com/nodeca/js-yaml).  Default *[safeLoad](https://github.com/nodeca/js-yaml#safeload-string---options-)* and *[safeDump](https://github.com/nodeca/js-yaml#safedump-object---options-)* actions are supported *along with restricted options*.
+
+Example uses the [Express](https://expressjs.com/) framework.
+
 ## License
 
 © [Laura Taylor](https://github.com/techstreams). Licensed under an [MIT](LICENSE) license.
