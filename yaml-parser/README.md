@@ -148,7 +148,7 @@ function dumpYaml() {
    // Consider storing URL in a Google Apps Script Properties Store
    var functionUrl = "https://<FIREBASE_CLOUD_FUNCTION_URL>/yamlParser";
 
-   // DEVELOPER TODO: Replace "content" with YAML content to be LOADed
+   // DEVELOPER TODO: Replace "content" with JSON content to be DUMPed
    var json = { cats: ["rats", "mats","hats"] };
 
   var requestBody = {
