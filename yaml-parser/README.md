@@ -31,7 +31,7 @@ Requests to Cloud Function should specify header `contentType` of `application/j
   * **[safeDump](https://github.com/nodeca/js-yaml#safedump-object---options-)** -  all options supported **EXCEPT** `skipInvalid`, `styles`, `schema` and `condenseFlow`
 
 
-Example LOAD Request (from YAML):
+Example LOAD Request (YAML):
 
 ```
 {
@@ -40,7 +40,7 @@ Example LOAD Request (from YAML):
 }
 ```
 
-Example LOAD Response (to JSON):
+Example LOAD Response (JSON):
 
 ```
 {
@@ -52,7 +52,7 @@ Example LOAD Response (to JSON):
 }
 ```
 
-Example DUMP Request (from JSON):
+Example DUMP Request (JSON):
 
 ```
 {
@@ -66,7 +66,7 @@ Example DUMP Request (from JSON):
 }
 ```
 
-Example DUMP Response (to YAML):
+Example DUMP Response (YAML):
 
 ```
 cats:
