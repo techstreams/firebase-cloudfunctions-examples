@@ -61,7 +61,7 @@ const validateToken = (req, res, next) => {
 app.use(allowMethods)
 app.use(validateToken)
 
-// Serve static content
+// Serve static content from 'protected' folder
 app.use('/static', express.static('protected'))
 
 // Send a 404 for non-matching requests
