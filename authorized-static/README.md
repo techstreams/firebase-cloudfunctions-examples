@@ -53,7 +53,7 @@ function getStatic() {
 
    var filePath = "static";
 
-   // DEVELOPER TODO: Replace <FILENAME> with name of file to retrieve from Cloud Function e.g. "myconfig.yml"
+   // DEVELOPER TODO: Replace <FILENAME> with name of file to retrieve from Cloud Function e.g. "config.yml"
    var fileName = "<FILENAME>";
 
    var params = {
