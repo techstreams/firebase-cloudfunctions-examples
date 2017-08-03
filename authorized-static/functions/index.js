@@ -62,7 +62,7 @@ app.use(allowMethods)
 app.use(validateToken)
 
 // Serve static content
-app.use('/static', express.static('public'))
+app.use('/static', express.static('protected'))
 
 // Send a 404 for non-matching requests
 app.get('*', (req, res) => {
