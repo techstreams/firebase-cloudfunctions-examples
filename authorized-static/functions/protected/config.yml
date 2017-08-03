@@ -1,2 +1,3 @@
+# Example static yaml file to be served by cloud function
 config:
   setting: 'test setting'
