@@ -1,5 +1,12 @@
 # Overview
 
+*If you enjoy my [Google Workspace Apps Script](https://developers.google.com/apps-script) work, please consider buying me a cup of coffee!* 
+
+
+[![](https://techstreams.github.io/images/bmac.svg)](https://www.buymeacoffee.com/techstreams)
+
+---
+
 This repository contains a *growing* collection of [Firebase Cloud Function](https://firebase.google.com/features/functions) examples to demonstrate backend support for [Google Apps Script](https://www.google.com/script/start/).
 
 *Testing [HTTP Trigger Functions](https://firebase.google.com/docs/functions/http-events)?  Try [Postman](https://www.getpostman.com/).*
